@@ -22,6 +22,12 @@ also demonstrate the faulty approach and explain its solution.
 3. [Interruption and cooperative cancellation](src/main/java/org/generation/italy/lesson03_interruption/README.md):
    cancel sleeping and computing workers, preserve interruption signals, and
    understand the difference between inspecting and clearing interruption status.
+4. [Race conditions and shared mutable state](src/main/java/org/generation/italy/lesson04_race_conditions/README.md):
+   observe lost counter updates, understand why they happen, and protect the
+   counter with `synchronized` methods.
+5. [Protecting invariants with synchronized blocks](src/main/java/org/generation/italy/lesson05_invariants/README.md):
+   keep an account balance nonnegative by protecting a complete withdrawal
+   operation with one private lock.
 
 Start with the lesson README, then read and run its examples in the suggested order.
 
