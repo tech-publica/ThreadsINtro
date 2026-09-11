@@ -28,6 +28,12 @@ also demonstrate the faulty approach and explain its solution.
 5. [Protecting invariants with synchronized blocks](src/main/java/org/generation/italy/lesson05_invariants/README.md):
    keep an account balance nonnegative by protecting a complete withdrawal
    operation with one private lock.
+6. [Visibility and volatile stop flags](src/main/java/org/generation/italy/lesson06_visibility/README.md):
+   compare ordinary and volatile flag reads, distinguish visibility from atomicity,
+   and contain a deliberately faulty worker with a timed wait and daemon status.
+7. [The very picky bathroom: wait and notifyAll](src/main/java/org/generation/italy/lesson07_wait_notify/README.md):
+   produce ten toilet-paper rolls of each of three colors in random order while
+   color-specific consumers wait, wake, and recheck the shared holder.
 
 Start with the lesson README, then read and run its examples in the suggested order.
 
