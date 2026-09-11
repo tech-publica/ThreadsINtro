@@ -16,9 +16,9 @@ also demonstrate the faulty approach and explain its solution.
 
 1. [Creating threads explicitly](src/main/java/org/generation/italy/lesson01_thread_creation/README.md):
    extend `Thread`, implement `Runnable`, and provide a `Runnable` with a lambda.
-2. [Thread lifecycle: waiting, sleeping, and observing state](src/main/java/org/generation/italy/lesson02_thread_lifecycle/README.md):
+2. [Thread lifecycle and scheduling](src/main/java/org/generation/italy/lesson02_thread_lifecycle/README.md):
    collect a worker's result with `join()`, pause with `sleep()`, and interpret
-   thread-state snapshots.
+   thread-state snapshots; optionally explore priorities with a scheduling experiment.
 3. [Interruption and cooperative cancellation](src/main/java/org/generation/italy/lesson03_interruption/README.md):
    cancel sleeping and computing workers, preserve interruption signals, and
    understand the difference between inspecting and clearing interruption status.
@@ -34,17 +34,22 @@ also demonstrate the faulty approach and explain its solution.
 7. [The very picky bathroom: wait and notifyAll](src/main/java/org/generation/italy/lesson07_wait_notify/README.md):
    produce ten toilet-paper rolls of each of three colors in random order while
    color-specific consumers wait, wake, and recheck the shared holder.
+8. [Deadlock and consistent lock ordering](src/main/java/org/generation/italy/lesson08_deadlock/README.md):
+   observe two workers deadlocking on opposite lock orders, then remove the
+   circular wait by acquiring both locks in a common order.
 
 Start with the lesson README, then read and run its examples in the suggested order.
 
 ## Thread-creation convention
 
-From lesson 3 onward, examples that create platform threads explicitly use the
-builder API: `Thread.ofPlatform().name("worker").start(task)`. When construction
+Lesson 2's optional priority example introduces the platform-thread builder.
+From lesson 3 onward, it is the default for explicit platform-thread creation:
+`Thread.ofPlatform().name("worker").start(task)`. When construction
 and startup need to be shown separately, use `.unstarted(task)` followed by the
 returned thread's `start()` method. Each lesson explains any API it introduces.
 
-Lessons 1 and 2 retain their introductory thread-creation examples. The
+Lesson 1 and the first two examples in lesson 2 retain their introductory
+thread-creation approaches. The
 `Thread` constructors remain supported; using builders is this course's modern
 style convention, not a claim that constructors are deprecated.
 

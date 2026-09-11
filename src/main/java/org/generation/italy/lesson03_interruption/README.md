@@ -41,9 +41,10 @@ task is supplied as a `Runnable` lambda; there are no extra task classes.
 
 ## Creating workers with the modern builder API
 
-From this lesson onward, our default for explicitly creating platform threads
-is the builder API, available as a standard API since Java 21. All three demos
-use this form:
+Lesson 2's optional priority example introduced the builder API, available as a
+standard API since Java 21. From this lesson onward, it is our default for
+explicitly creating platform threads. This section is self-contained if you
+skipped that optional example. All three demos use this form:
 
 ```java
 Thread worker = Thread.ofPlatform().name("worker").start(() -> {
